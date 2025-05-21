@@ -5,7 +5,7 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/app.js",
-    "dev": "ts-node src/app.ts",
+    "dev": "nodemon src/app.ts",
     "test": "echo \"Error: no test specified in backend\" && exit 1"
   },
   "keywords": [],
