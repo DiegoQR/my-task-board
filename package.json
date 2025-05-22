@@ -13,8 +13,8 @@
     "dev": "npm run dev --workspaces --workspace-root"
   },
   "dependencies": {
-    "@my-task-board/backend": "^1.0.0",
-    "@my-task-board/frontend": "^1.0.0"
+    "@my-task-board/backend": "1.0.0",
+    "@my-task-board/frontend": "1.0.0"
   },
   "keywords": [],
   "author": "",
