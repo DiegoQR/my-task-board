@@ -1,13 +1,17 @@
 import pool from '../lib/connection';
+import BoardEntity from '../types/BoardEntity';
 
-export { getBoard };
+export { 
+  getBoard,
+  createBoard
+};
 
 async function getBoard(boardId: string) {
+  let result;
   const query = 'SELECT * FROM boards WHERE "boardId" = $1';
   const client = await pool.connect();
   try {
-    const result = await client.query(query, [boardId]);
-    return result.rows[0];
+    result = await client.query(query, [boardId]);
   } catch (error) {
     if (error instanceof Error) {
       throw new Error(error.message);
@@ -17,5 +21,27 @@ async function getBoard(boardId: string) {
   } finally {
     client.release();
   }
+  return result.rows[0];
 }
 
+async function createBoard(board: BoardEntity) {
+  let result;
+  const query =
+    'INSERT INTO boards ("name", "description") VALUES ($1, $2)';
+  const client = await pool.connect();
+  try {
+    result = await client.query(query, [
+      board.title,
+      board.description,
+    ]);
+  } catch (error) {
+    if (error instanceof Error) {
+      throw new Error(error.message);
+    } else {
+      throw new Error('An unknown error occurred');
+    }
+  } finally {
+    client.release();
+  }
+  return result.rows[0];
+}
