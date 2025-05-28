@@ -26,12 +26,11 @@ async function getBoard(boardId: string) {
 
 async function createBoard(board: BoardEntity) {
   let result;
-  const query =
-    'INSERT INTO boards ("name", "description") VALUES ($1, $2)';
+  const query = 'INSERT INTO boards ("name", "description") VALUES ($1, $2) RETURNING *';
   const client = await pool.connect();
   try {
     result = await client.query(query, [
-      board.title,
+      board.name,
       board.description,
     ]);
   } catch (error) {

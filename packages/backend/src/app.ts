@@ -7,6 +7,7 @@ const app = express();
 const PORT = config.port;
 
 app.use(cors());
+app.use(express.json());
 
 boardsRouter(app)
 
