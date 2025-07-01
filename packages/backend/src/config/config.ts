@@ -8,10 +8,13 @@ const {
     PGHOST,
     PGDATABASE,
     PGUSER,
-    PGPASSWORD
+    PGPASSWORD,
+    NODE_ENV
+
 } = process.env;
 
 const config = {
+    dev: NODE_ENV !== 'production',
     port: Number(BACKEND_PORT)  || 3000,
     host: PGHOST,
     database: PGDATABASE,

@@ -9,8 +9,8 @@
   "description": "![Thumbnail for the My Task Board coding challenge](./thumbnail.jpg)",
   "main": "index.js",
   "scripts": {
-    "test": "npm run test --workspaces --workspace-root",
-    "dev": "npm run dev --workspaces --workspace-root"
+    "test": "npm run test --workspaces",
+    "dev": "npm run dev --workspaces"
   },
   "dependencies": {
     "@my-task-board/backend": "1.0.0",
