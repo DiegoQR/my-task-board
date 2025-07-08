@@ -3,7 +3,7 @@ import Joi, { NumberSchema, StringSchema } from "joi";
 const idSchema :  NumberSchema = Joi.number();
 const nameSchema : StringSchema = Joi.string().max(200);
 const descriptionSchema : StringSchema = Joi.string().max(2000);
-const iconSchema : StringSchema = Joi.string().max(1);
+const iconSchema : StringSchema = Joi.string().max(2);
 const statusSchema : StringSchema = Joi.string().valid('TO_DO', 'IN_PROGRESS', 'COMPLETED', 'WONT_DO');
 
 const taskIdSchema = {
@@ -11,23 +11,23 @@ const taskIdSchema = {
 }
 
 const createTaskSchema = {
-    userId: idSchema.required(),
+    boardId: idSchema.required(),
     name: nameSchema.required(),
     description: descriptionSchema.optional(),
-    iconSchema: iconSchema.required(),
-    statusSchema: statusSchema.required(),
+    icon: iconSchema.required(),
+    status: statusSchema.required(),
 }
 
-const updateBoardSchema = {
-    userId: idSchema.optional(),
+const updateTaskSchema = {
+    boardId: idSchema.optional(),
     name: nameSchema.optional(),
     description: descriptionSchema.optional(),
-    iconSchema: iconSchema.optional(),
-    statusSchema: statusSchema.optional(),
+    icon: iconSchema.optional(),
+    status: statusSchema.optional(),
 }
 
 export {
     taskIdSchema,
     createTaskSchema,
-    updateBoardSchema,
+    updateTaskSchema,
 }

@@ -13,6 +13,7 @@
     "dev": "npm run dev --workspaces"
   },
   "dependencies": {
+    "@hapi/boom": "^10.0.1",
     "@my-task-board/backend": "1.0.0",
     "@my-task-board/frontend": "1.0.0"
   },
