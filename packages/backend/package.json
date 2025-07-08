@@ -5,8 +5,8 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/app.js",
-    "dev": "nodemon src/app.ts",
-    "test": "echo \"Error: no test specified in backend\" && exit 1"
+    "dev": "ts-node src/app.ts &",
+    "test": "jest --watchAll"
   },
   "keywords": [],
   "author": "",

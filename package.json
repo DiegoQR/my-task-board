@@ -10,7 +10,9 @@
   "main": "index.js",
   "scripts": {
     "test": "npm run test --workspaces",
-    "dev": "npm run dev --workspaces"
+    "dev": "concurrently \"npm run dev --prefix packages/backend\" \"npm run dev --prefix packages/frontend\"",
+    "dev:backend": "npm run dev --prefix packages/backend",
+    "dev:frontend": "npm run dev --prefix packages/frontend"
   },
   "dependencies": {
     "@hapi/boom": "^10.0.1",
@@ -19,5 +21,10 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^9.2.0",
+    "jest": "^30.0.4",
+    "wait-on": "^8.0.3"
+  }
 }
