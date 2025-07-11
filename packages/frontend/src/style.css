@@ -2,6 +2,19 @@
 
 @theme {
     --font-outfit: "Outfit", sans-serif;
+
+    --color-soft-white: #F8FAFC;
+    --color-yellow: #F5D565;
+    --color-soft-yellow: #F5E8D5;
+    --color-orange: #E9A23B;
+    --color-soft-green: #A0ECB1;
+    --color-green: #32D657;
+    --color-soft-red: #F7D4D3;
+    --color-red: #DD524C;
+    --color-soft-gray: #E3E8EF;
+    --color-gray: #97A3B6;
+    --color-blue: #3662E3;
+    --color-light-gray: #00000033;
 }
 
 :root {

@@ -1,10 +1,10 @@
-import { useState } from 'react'
+import MainPage from './pages/MainPage'
 
 function App() {
 
   return (
     <>
-      <p className='text-9xl'>author</p>
+      <MainPage />
     </>
   )
 }
